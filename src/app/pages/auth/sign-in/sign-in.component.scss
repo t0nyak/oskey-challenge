@@ -1,0 +1,27 @@
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  button,
+  mat-form-field {
+    width: -webkit-fill-available;
+
+    mat-mdc-text-field-wrapper {
+      background-color: transparent;
+    }
+  }
+
+  button {
+    margin-bottom: 10px;
+  }
+}
