@@ -2,7 +2,9 @@
 <main>
   <div class="content">
     <h1>Welcome to the App</h1>
-    <p>You've not timezones defined yet. Try adding a new one</p>
+    <p *ngIf="userTimezones.length === 0">
+      You've not timezones defined yet. Try adding a new one
+    </p>
 
     <div class="select-container">
       <form>
