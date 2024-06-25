@@ -1,0 +1,26 @@
+.timezone-container {
+  padding: 16px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+
+  .timezone-data {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: start;
+  }
+
+  .timezone-actions {
+    display: flex;
+    gap: 0;
+    justify-content: end;
+    align-items: center;
+
+    mat-icon {
+      font-size: 20px;
+    }
+  }
+}

@@ -1,0 +1,13 @@
+<div class="timezone-container">
+  <div class="timezone-data">
+    <span><strong>Timezone:</strong> {{ timezone.timezone }}</span>
+    <span
+      ><i>Created at: {{ formattedTime }}</i></span
+    >
+  </div>
+  <div class="timezone-actions">
+    <button mat-icon-button (click)="deleteTimezone(timezone.id)">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </div>
+</div>

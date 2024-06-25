@@ -25,21 +25,19 @@ export class SignInComponent implements OnInit {
     });
   }
 
-  signIn(): void {
+  async signIn(): Promise<void> {
     this.isLoading = true;
 
-    this.authService
-      .signIn({
+    try {
+      const result = await this.authService.signIn({
         email: this.form.value.email,
         password: this.form.value.password,
-      })
-      .subscribe({
-        next: () => {
-          this.router.navigate(['home']);
-        },
-        error: () => {
-          this.isLoading = false;
-        },
       });
+
+      this.router.navigate(['home']);
+    } catch (error) {
+      this.isLoading = false;
+      console.error('Error signing in:', error);
+    }
   }
 }

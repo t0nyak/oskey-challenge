@@ -6,19 +6,16 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class TimeapiService {
-  apiPath: string = 'https://www.timeapi.io/api';
+  apiPath: string = 'https://timeapi.io/api/TimeZone/AvailableTimeZones';
 
   constructor(private http: HttpClient) {}
 
   getTimezones(): Observable<string[]> {
-    return this.http.get<string[]>(
-      `${this.apiPath}/TimeZone/AvailableTimeZones`,
-      {
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
-        },
-      }
-    );
+    return this.http.get<string[]>(`${this.apiPath}`, {
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+    });
   }
 }

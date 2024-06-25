@@ -25,21 +25,14 @@ export class SignUpComponent implements OnInit {
     });
   }
 
-  signUp(): void {
+  async signUp(): Promise<void> {
     this.isLoading = true;
 
-    this.authService
-      .signUp({
-        email: this.form.value.email,
-        password: this.form.value.password,
-      })
-      .subscribe({
-        next: () => {
-          this.router.navigate(['auth/sign-in']);
-        },
-        error: () => {
-          this.isLoading = false;
-        },
-      });
+    await this.authService.signUp({
+      email: this.form.value.email,
+      password: this.form.value.password,
+    });
+
+    this.router.navigate(['auth/sign-in']);
   }
 }

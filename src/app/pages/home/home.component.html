@@ -7,7 +7,7 @@
     <div class="select-container">
       <form>
         <mat-form-field>
-          <mat-label>Favorite food</mat-label>
+          <mat-label>Available timezones</mat-label>
           <mat-select [(ngModel)]="selectedValue" name="food">
             <mat-option *ngFor="let timezone of timezones" [value]="timezone">{{
               timezone
@@ -16,11 +16,20 @@
         </mat-form-field>
       </form>
     </div>
+
     <div class="button-container">
-      <button mat-fab extended>
+      <button mat-fab extended (click)="addTimezone()">
         <mat-icon>add</mat-icon>
         Add timezone
       </button>
+    </div>
+
+    <div class="timezones">
+      <timezone-card
+        *ngFor="let timezone of userTimezones"
+        [timezone]="timezone"
+        (delete)="deleteTimezone($event)"
+      ></timezone-card>
     </div>
   </div>
 </main>

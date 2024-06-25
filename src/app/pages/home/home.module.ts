@@ -10,6 +10,9 @@ import { FormsModule } from '@angular/forms';
 import { NavbarComponent } from 'src/app/components/navbar/navbar.component';
 import { MatOptionModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
+import { TimezoneCardComponent } from 'src/app/components/timezone-card/timezone-card.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { SnackbarComponent } from 'src/app/components/snackbar/snackbar.component';
 
 const routes: Routes = [
   {
@@ -19,7 +22,12 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [HomeComponent, NavbarComponent],
+  declarations: [
+    HomeComponent,
+    NavbarComponent,
+    TimezoneCardComponent,
+    SnackbarComponent,
+  ],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
@@ -31,6 +39,7 @@ const routes: Routes = [
     MatButtonModule,
     MatOptionModule,
     MatSelectModule,
+    MatSnackBarModule,
   ],
   exports: [HomeComponent],
 })
